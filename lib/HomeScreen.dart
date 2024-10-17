@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -130,7 +129,7 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
               child: TextField(
-               maxLength:11,
+                maxLength: 11,
                 obscureText: false,
                 maxLines: 1,
                 keyboardType: TextInputType.datetime,
@@ -138,9 +137,11 @@ class HomeScreen extends StatelessWidget {
                     hintText: 'phone',
                     labelText: 'phone number',
                     labelStyle: const TextStyle(),
+                    counterStyle: const TextStyle(fontSize: 13, color: Colors.black),
+                    prefixIcon: const Icon(Icons.phone),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(color: Colors.green)),
                     helperStyle: TextStyle(
                         fontWeight: FontWeight.w400,
                         color: Colors.grey.shade100,
@@ -154,9 +155,11 @@ class HomeScreen extends StatelessWidget {
                 minLines: 1,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                  hintText:'email',
+                    hintText: 'email',
                     labelText: 'Email address',
                     border: OutlineInputBorder(
+                        borderSide:
+                            const BorderSide(color: Colors.green, width: 3),
                         borderRadius: BorderRadius.circular(10))),
               ),
             ),
@@ -166,14 +169,41 @@ class HomeScreen extends StatelessWidget {
                 maxLength: 16,
                 minLines: 1,
                 keyboardType: TextInputType.emailAddress,
-                obscureText:true,
+                obscureText: true,
                 decoration: InputDecoration(
-                    hintText:'password',
+                    hintText: 'password',
                     labelText: 'Password',
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10))),
               ),
             ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 0, 15, 0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  OutlinedButton(
+                      onPressed: () {},
+                      style: OutlinedButton.styleFrom(
+                        backgroundColor: Colors.blueAccent,
+                        foregroundColor: Colors.black,
+                        textStyle: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 45, vertical: 13),
+                        side: const BorderSide(width: 2, color: Colors.black),
+                      ),
+                      child: const Text('LOGIN'))
+                ],
+              ),
+            )
           ],
         ),
       ),
