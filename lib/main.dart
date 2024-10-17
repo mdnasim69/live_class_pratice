@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-
 import 'HomeScreen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main(){runApp(LoginApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class LoginApp extends StatelessWidget{
+  const LoginApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: HomeScreen(),title:'Nasim app',);
+return MaterialApp(home:HomeActivity(),debugShowCheckedModeBanner:false,);
   }
 }
+
